@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "lib": ["ESNext"],
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "types": ["cypress", "cypress-visual-regression", "node"],
+    "baseUrl": "."
+  }
+}

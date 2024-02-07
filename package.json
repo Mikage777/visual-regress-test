@@ -1,0 +1,35 @@
+{
+  "name": "visual-regress-test",
+  "version": "0.0.1",
+  "description": "Visual regress test for web pages",
+  "type": "module",
+  "scripts": {
+    "parse": "node scripts/parseSitemap.js",
+    "e2e": "cypress open",
+    "e2e:run": "cypress run --browser chrome --env type=regression",
+    "e2e:test": "npm run clean:diff && npm run e2e:run",
+    "e2e:base": "npm run create:base && npm run clean:diff && npm run clean:actual",
+    "create:base": "cross-env REGRESS_TYPE=base cypress run --browser chrome --env type=base",
+    "clean:diff": "rimraf  ./snapshots/diff || exit 0",
+    "clean:actual": "rimraf ./snapshots/actual || exit 0",
+    "test": "exit 0"
+  },
+  "keywords": [
+    "cypress",
+    "e2e",
+    "visual-regress"
+  ],
+  "author": "Igor Bakhtin",
+  "license": "MIT",
+  "dependencies": {
+    "cypress": "^13.6.4",
+    "cypress-mochawesome-reporter": "^3.8.1",
+    "cypress-visual-regression": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.16",
+    "cross-env": "^7.0.3",
+    "sitemapper": "^3.2.8",
+    "typescript": "^5.3.3"
+  }
+}

@@ -1,0 +1,5 @@
+/cypress/report
+/cypress/snapshots
+/node_modules
+.nvmrc
+config.json
